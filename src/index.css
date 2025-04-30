@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+.section-padding {
+  @apply py-20;
+}
+
+.container {
+  @apply mx-auto px-4 max-w-7xl;
+}
+
+.project-card {
+  @apply bg-dark-600 rounded-lg overflow-hidden shadow-card transition-all duration-300 hover:shadow-card-hover transform hover:-translate-y-1;
+}
+
+.btn-primary {
+  @apply px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all duration-300 shadow-md;
+}
+
+.btn-outline {
+  @apply px-6 py-3 border border-primary-500 text-white font-semibold rounded-lg hover:bg-primary-500/10 transition-all duration-300;
+}
+
+.section-title {
+  @apply text-3xl font-poppins font-bold mb-12 relative inline-block;
+}
+
+.section-title::after {
+  content: '';
+  @apply absolute -bottom-2 left-0 w-2/3 h-1 bg-accent-700 rounded-full;
+}
+
+.skill-tag {
+  @apply px-3 py-1 rounded-full text-sm font-medium bg-dark-500 hover:bg-dark-400 transition-all duration-300;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-dark-700;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-dark-400 rounded-full hover:bg-dark-300;
+}
