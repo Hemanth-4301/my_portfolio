@@ -1,15 +1,15 @@
-import { motion } from 'framer-motion'
-import { experienceData } from '../data/data'
+import { motion } from "framer-motion";
+import { experienceData } from "../data/data";
 
 const Experience = () => {
   const containerVariants = {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.2
-      }
-    }
-  }
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
   const itemVariants = {
     hidden: { x: 30, opacity: 0 },
@@ -17,13 +17,16 @@ const Experience = () => {
       x: 0,
       opacity: 1,
       transition: {
-        duration: 0.5
-      }
-    }
-  }
+        duration: 0.5,
+      },
+    },
+  };
 
   return (
-    <section id="experience" className="section-padding bg-dark-700">
+    <section
+      id="experience"
+      className="section-padding bg-dark-700 overflow-hidden"
+    >
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,7 +41,7 @@ const Experience = () => {
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -46,7 +49,7 @@ const Experience = () => {
           className="max-w-3xl mx-auto"
         >
           {experienceData.map((item, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               variants={itemVariants}
               className="relative pl-8 pb-12 last:pb-0"
@@ -55,10 +58,10 @@ const Experience = () => {
               {index !== experienceData.length - 1 && (
                 <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent-700 to-accent-500"></div>
               )}
-              
+
               {/* Timeline circle */}
               <div className="absolute left-0 top-0 w-4 h-4 rounded-full border-2 border-accent-600 bg-dark-700 transform -translate-x-1/2"></div>
-              
+
               <div className="bg-dark-600 rounded-lg p-6 shadow-md border border-dark-500 hover:border-accent-700 transition-all duration-300">
                 <div className="flex justify-between flex-wrap mb-2">
                   <h3 className="text-xl font-poppins font-semibold text-white mb-1">
@@ -85,7 +88,7 @@ const Experience = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Experience
+export default Experience;

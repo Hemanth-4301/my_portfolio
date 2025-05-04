@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { Typewriter } from "react-simple-typewriter";
 import my_img from "../assets/img2.jpg";
 
 const Hero = () => {
@@ -17,13 +18,27 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="md:w-1/2 mb-12 md:mb-0"
           >
-            <div className="text-accent-500 mb-4 font-medium">Hi, I'm</div>
+            <div className="text-accent-500 mb-4 font-medium text-2xl">
+              Hi, I'm
+            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-poppins font-bold mb-6">
               <span className="text-white">Hemanth</span>
-              <span className="text-primary-500"> Kumar R</span>
+              <span className="text-primary-500"> Kumar</span>
             </h1>
             <h2 className="text-xl md:text-2xl text-gray-300 font-medium mb-6">
-              Full-Stack Developer | UI/UX Enthusiast
+              <Typewriter
+                words={[
+                  "Full-Stack Developer",
+                  "UI/UX Enthusiast",
+                  "AI Enthusiast",
+                ]}
+                loop={true}
+                cursor
+                cursorStyle="|"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1500}
+              />
             </h2>
             <p className="text-gray-400 max-w-xl mb-8 leading-relaxed">
               A passionate developer with expertise in creating responsive web
@@ -83,13 +98,13 @@ const Hero = () => {
             className="md:w-5/12"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary-600/30 to-accent-600/20 rounded-xl blur-xl"></div>
-              <div className="relative bg-dark-600 p-2 rounded-xl border border-dark-400">
-                <div className="bg-dark-500 rounded-lg overflow-hidden w-full aspect-square">
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary-600/30 to-accent-600/20 rounded-full blur-xl"></div>
+              <div className="relative bg-dark-600 p-2 rounded-full border border-dark-400">
+                <div className="bg-dark-500 rounded-full overflow-hidden w-full aspect-square">
                   <img
                     src={my_img}
                     alt="Hemanth Kumar R"
-                    className="w-full h-full object-cover object-center brightness-90 hover:brightness-100 transition-all duration-300"
+                    className="w-full h-full object-cover object-center brightness-90 hover:brightness-100 transition-all duration-300 "
                   />
                 </div>
               </div>

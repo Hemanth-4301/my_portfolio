@@ -1,64 +1,72 @@
-import { useState, useEffect } from 'react'
-import { Link } from 'react-scroll'
-import { motion } from 'framer-motion'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { useState, useEffect } from "react";
+import { Link } from "react-scroll";
+import { motion } from "framer-motion";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Home', to: 'hero' },
-    { name: 'Skills', to: 'skills' },
-    { name: 'Projects', to: 'projects' },
-    { name: 'Education', to: 'education' },
-    { name: 'Experience', to: 'experience' },
-    { name: 'Interests', to: 'interests' },
-    { name: 'Contact', to: 'contact' }
-  ]
+    { name: "Home", to: "hero" },
+    { name: "Skills", to: "skills" },
+    { name: "Projects", to: "projects" },
+    { name: "Education", to: "education" },
+    { name: "Experience", to: "experience" },
+    { name: "Contact", to: "contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setScrolled(true)
+        setScrolled(true);
       } else {
-        setScrolled(false)
+        setScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-dark-800/90 backdrop-blur-md py-3 shadow-md' : 'bg-transparent py-6'}`}>
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300  overflow-hidden ${
+        scrolled
+          ? "bg-dark-800/90 backdrop-blur-md py-3 shadow-md"
+          : "bg-transparent py-6"
+      }`}
+    >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-2xl font-poppins font-bold"
+          className="text-3xl font-poppins font-bold"
         >
-          <span className="text-primary-500">H</span>emanth
+          H<span className="text-primary-500">K</span>
         </motion.div>
 
         {/* Desktop Navigation */}
-        <motion.ul 
+        <motion.ul
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="hidden md:flex space-x-8"
         >
           {navLinks.map((link, index) => (
-            <li key={index} className="text-gray-300 hover:text-primary-500 transition-colors duration-300 cursor-pointer">
+            <li
+              key={index}
+              className="text-gray-300 hover:text-primary-500 transition-colors duration-100 cursor-pointer"
+            >
               <Link
                 to={link.to}
-                spy={true}
                 smooth={true}
                 offset={-70}
-                duration={500}
+                spy={true}
+                duration={100}
                 activeClass="text-primary-500 font-medium"
               >
                 {link.name}
@@ -69,12 +77,16 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <button
+          <motion.button
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            whileTap={{ rotate: 360 }}
             onClick={() => setMenuOpen(!menuOpen)}
             className="focus:outline-none text-xl"
           >
-            {menuOpen ? <FaTimes /> : <FaBars />}
-          </button>
+            {menuOpen ? <FaTimes size={26} /> : <FaBars size={26} />}
+          </motion.button>
         </div>
       </div>
 
@@ -88,7 +100,10 @@ const Navbar = () => {
         >
           <ul className="py-4 px-6 space-y-4">
             {navLinks.map((link, index) => (
-              <li key={index} className="text-gray-300 hover:text-primary-500 transition-colors duration-300">
+              <li
+                key={index}
+                className="text-gray-300 hover:text-primary-500 transition-colors duration-300"
+              >
                 <Link
                   to={link.to}
                   spy={true}
@@ -106,7 +121,7 @@ const Navbar = () => {
         </motion.div>
       )}
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
