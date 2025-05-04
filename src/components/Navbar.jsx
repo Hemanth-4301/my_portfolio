@@ -64,8 +64,6 @@ const Navbar = () => {
               <Link
                 to={link.to}
                 smooth={true}
-                offset={-70}
-                spy={true}
                 duration={100}
                 activeClass="text-primary-500 font-medium"
               >
@@ -80,7 +78,7 @@ const Navbar = () => {
           <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3 }}
             whileTap={{ rotate: 360 }}
             onClick={() => setMenuOpen(!menuOpen)}
             className="focus:outline-none text-xl"

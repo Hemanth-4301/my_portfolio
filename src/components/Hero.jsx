@@ -18,14 +18,14 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="md:w-1/2 mb-12 md:mb-0"
           >
-            <div className="text-accent-500 mb-4 font-medium text-2xl">
+            <div className="text-accent-500 mb-4 font-bold text-2xl">
               Hi, I'm
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-poppins font-bold mb-6">
               <span className="text-white">Hemanth</span>
               <span className="text-primary-500"> Kumar</span>
             </h1>
-            <h2 className="text-xl md:text-2xl text-gray-300 font-medium mb-6">
+            <h2 className="text-xl md:text-2xl text-white font-medium mb-6">
               <Typewriter
                 words={[
                   "Full-Stack Developer",

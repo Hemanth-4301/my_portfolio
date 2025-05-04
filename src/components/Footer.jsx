@@ -18,7 +18,7 @@ const Footer = () => {
           </Link>
 
           <div className="text-2xl font-poppins font-bold mb-4">
-            <span className="text-primary-500">H</span>emanth
+            <span className="text-primary-500">Hem</span>anth
           </div>
 
           <div className="flex space-x-6 mb-6">
